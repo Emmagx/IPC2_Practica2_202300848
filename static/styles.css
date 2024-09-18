@@ -3,12 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e0f7fa; /* Azul claro */
+    background-color: #0b4850; /* Azul claro */
 }
 
 /* Barra de navegación */
 .navbar {
-    background-color: #00796b; /* Verde oscuro */
+    background-color: #090404; /* Verde oscuro */
     padding: 10px 20px; /* Ajustar el padding si es necesario */
     position: fixed;
     width: 100%;
@@ -57,7 +57,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #e0f7fa; /* Azul claro */
+    background-color: #f0fae0; /* Azul claro */
 }
 
 .login-page .container {
@@ -129,7 +129,7 @@ body {
 
 .index-page h1 {
     font-size: 28px;
-    color: #004d40; /* Verde oscuro */
+    color: #234d00; /* Verde oscuro */
     animation: slideIn 0.5s ease-out;
 }
 
@@ -145,7 +145,7 @@ body {
 }
 
 .index-page .responsive-table th {
-    background-color: #00796b; /* Verde oscuro */
+    background-color: #006979; /* Verde oscuro */
     color: #ffffff;
 }
 
@@ -326,7 +326,7 @@ body {
     margin-top: 10px;
 }
 .btn:hover {
-    background-color: #4CAF50; /* Cambia el color de fondo al pasar el mouse */
+    background-color: #194a86; /* Cambia el color de fondo al pasar el mouse */
     color: white; /* Cambia el color de texto al pasar el mouse */
 }
 .nav-item{
