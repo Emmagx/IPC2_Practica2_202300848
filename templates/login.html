@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" class="login-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Super Autos GT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form method="POST" action="{{ url_for('login') }}">
+            <label for="username">Usuario:</label>
+            <input type="text" name="username" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" required>
+            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+        </form>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="modal" id="myModal" style="display: block;">
+                    <div class="modal-content">
+                        {% for category, message in messages %}
+                            <p><strong>{{ 'Éxito' if category == 'success' else 'Error' }}:</strong> {{ message }}</p>
+                        {% endfor %}
+                        <a href="{{ url_for('login') }}" class="close-btn">Cerrar</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" class="index-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autos Registrados - Super Autos GT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="{{ url_for('index') }}">AutoGestión</a>
+        <div class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Autos Registrados</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('registrar_auto') }}">Registrar Auto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Autos Registrados</h1>
+        <table class="responsive-table">
+            <caption>Listado de Autos Registrados</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Descripción</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for auto in autos %}
+                <tr>
+                    <td>{{ auto.placa }}</td>
+                    <td>{{ auto.marca }}</td>
+                    <td>{{ auto.modelo }}</td>
+                    <td>{{ auto.descripcion }}</td>
+                    <td>Q{{ auto.precio_unitario }}</td>
+                    <td>{{ auto.cantidad }}</td>
+                    <td><img src="{{ url_for('static', filename=auto.imagen)}}" alt="Imagen del auto" class="img-small"></td>
+                    <td>
+                        <form action="{{ url_for('eliminar_auto', placa=auto.placa) }}" method="POST">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="modal" id="myModal" style="display: block;">
+                    <div class="modal-content">
+                        {% for category, message in messages %}
+                            <p><strong>{{ 'Éxito' if category == 'success' else 'Error' }}:</strong> {{ message }}</p>
+                        {% endfor %}
+                        <a href="{{ url_for('index') }}" class="close-btn">Cerrar</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Super Autos GT. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

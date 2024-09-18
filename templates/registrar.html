@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es" class="register-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Auto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="{{ url_for('index') }}">AutoGestión</a>
+        <div class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Autos Registrados</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('registrar_auto') }}">Registrar Auto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Registrar Auto</h1>
+        <form action="{{ url_for('registrar_auto') }}" method="POST" enctype="multipart/form-data">
+            <label for="placa">ID:</label>
+            <input type="text" name="placa" required>
+            <label for="marca">Marca:</label>
+            <input type="text" name="marca" required>
+            <label for="modelo">Modelo:</label>
+            <input type="text" name="modelo" required>
+            <label for="descripcion">Descripción:</label>
+            <input name="descripcion" required></textarea>
+            <label for="precio_unitario">Precio Unitario:</label>
+            <input type="number" step="0.01" name="precio_unitario" required>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" name="cantidad" required>
+            <label for="imagen">Imagen:</label>
+            <input type="file" name="imagen" accept="image/*" required>
+            <button type="submit" class="btn btn-success">Registrar Auto</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="modal" id="myModal" style="display: block;">
+                    <div class="modal-content">
+                        {% for category, message in messages %}
+                            <p><strong>{{ 'Éxito' if category == 'success' else 'Error' }}:</strong> {{ message }}</p>
+                        {% endfor %}
+                        <a href="{{ url_for('registrar_auto') }}" class="close-btn">Cerrar</a>
+                    </div>
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

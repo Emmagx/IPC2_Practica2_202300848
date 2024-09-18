@@ -1,0 +1,335 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa; /* Azul claro */
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #00796b; /* Verde oscuro */
+    padding: 10px 20px; /* Ajustar el padding si es necesario */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos de forma equidistante */
+    align-items: center; /* Alinea los elementos verticalmente en el centro */
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #80cbc4; /* Verde claro */
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #b2dfdb; /* Verde más claro */
+}
+
+/* Estilos específicos para la página de login */
+.login-page body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0f7fa; /* Azul claro */
+}
+
+.login-page .container {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+
+    animation: fadeIn 1s ease-in;
+}
+
+.login-page h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #004d40; /* Verde oscuro */
+    animation: slideIn 0.5s ease-out;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-page form label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #004d40; /* Verde oscuro */
+}
+
+.login-page form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #004d40; /* Verde oscuro */
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.login-page form input:focus {
+    border-color: #00796b; /* Verde más claro */
+}
+
+.login-page .btn-primary {
+    background-color: #004d40; /* Verde oscuro */
+    color: #ffffff;
+}
+
+.login-page .btn-primary:hover {
+    background-color: #00332a; /* Verde más oscuro */
+    transform: scale(1.05);
+}
+
+/* Estilos específicos para la página de autos registrados */
+.index-page .container {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    margin-top: 70px; /* Asegura que no se solape con la barra de navegación */
+    animation: fadeIn 1s ease-in;
+}
+
+.index-page h1 {
+    font-size: 28px;
+    color: #004d40; /* Verde oscuro */
+    animation: slideIn 0.5s ease-out;
+}
+
+.index-page .responsive-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.index-page .responsive-table th, 
+.index-page .responsive-table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.index-page .responsive-table th {
+    background-color: #00796b; /* Verde oscuro */
+    color: #ffffff;
+}
+
+.index-page .responsive-table tr:nth-child(even) {
+    background-color: #e0f2f1; /* Azul muy claro */
+}
+
+.index-page .responsive-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+.index-page .responsive-table img {
+    max-width: 100px;
+    border-radius: 4px;
+}
+
+.index-page .btn-danger {
+    background-color: #d32f2f; /* Rojo oscuro */
+    color: #ffffff;
+}
+
+.index-page .btn-danger:hover {
+    background-color: #c62828; /* Rojo más oscuro */
+}
+
+/* Estilos para el contenedor del formulario */
+.register-page .container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in;
+    margin-top: 0; /* Elimina el margen superior */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el formulario horizontalmente */
+}
+
+.register-page h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #004d40; /* Verde oscuro */
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Estilo general para el formulario */
+.register-page form {
+    display: flex;
+    flex-direction: column;
+    width: 80%; 
+    align-items: center;
+}
+
+.register-page form label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #004d40; /* Verde oscuro */
+}
+
+.register-page form input,
+.register-page form textarea {
+    width: 50%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #004d40; /* Verde oscuro */
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+/* Pseudoclases para input y textarea */
+.register-page form input:focus,
+.register-page form textarea:focus {
+    border-color: #00796b; /* Verde más claro */
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Sombra para el input enfocado */
+    outline: none; /* Elimina el borde predeterminado */
+}
+
+.register-page form input:hover,
+.register-page form textarea:hover {
+    background-color: #e0f2f1; /* Fondo ligeramente más claro al pasar el cursor */
+}
+
+/* Estilo para el botón de envío */
+.register-page .btn-success {
+    background-color: #004d40; /* Verde oscuro */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.register-page .btn-success:hover {
+    background-color: #00796b; /* Verde más claro */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
+
+.register-page .btn-success:focus {
+    outline: none;
+    box-shadow: 0 0 5px #28a745; /* Sombra de enfoque */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo para las imágenes pequeñas en la tabla */
+.img-small {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Estilos para el fondo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo para que esté centrado */
+    z-index: 1; /* Sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Cubrirá toda la pantalla */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro semi-transparente */
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px; /* Ajusta el tamaño máximo del pop-up */
+}
+
+/* Estilo del botón cerrar */
+.close-btn {
+    color: white;
+    background-color: red;
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn:hover {
+    background-color: #4CAF50; /* Cambia el color de fondo al pasar el mouse */
+    color: white; /* Cambia el color de texto al pasar el mouse */
+}
+
+.nav-item a:focus {
+    outline: 2px solid blue; /* Define el estilo de enfoque */
+}
+
+.nav-item a:hover {
+    background-color: #f0f0f0; /* Efecto hover en los enlaces del navbar */
+}
+.btn-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:focus {
+    outline: none;
+    box-shadow: 0 0 5px #28a745;
+}
+
