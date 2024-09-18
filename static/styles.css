@@ -67,6 +67,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     animation: fadeIn 1s ease-in;
+    align-items: center
+    ;
 }
 
 .login-page h1 {
@@ -74,6 +76,8 @@ body {
     margin-bottom: 20px;
     color: #004d40; /* Verde oscuro */
     animation: slideIn 0.5s ease-out;
+    margin-right: 100px;
+    align-items: center;
 }
 
 .login-page form {
@@ -181,7 +185,7 @@ body {
     align-items: center;
 } */
 .register-page .container {
-    margin-top: 100px;
+    margin-top: 17px;
     max-width: 400px;
     padding: 20px;
     background-color: #ffffff;
@@ -325,13 +329,17 @@ body {
     background-color: #4CAF50; /* Cambia el color de fondo al pasar el mouse */
     color: white; /* Cambia el color de texto al pasar el mouse */
 }
-
+.nav-item{
+    padding: 10px;
+    display: flex;
+    margin-right: 20px;
+}
 .nav-item a:focus {
     outline: 2px solid blue; /* Define el estilo de enfoque */
 }
 
 .nav-item a:hover {
-    background-color: #f0f0f0; /* Efecto hover en los enlaces del navbar */
+    background-color: #5b4d15a7; /* Efecto hover en los enlaces del navbar */
 }
 .btn-success:hover {
     background-color: #28a745;
