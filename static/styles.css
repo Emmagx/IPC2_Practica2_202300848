@@ -337,7 +337,7 @@ body {
 .nav-item a:focus {
     outline: 2px solid blue; /* Define el estilo de enfoque */
 }
-
+b
 .nav-item a:hover {
     background-color: #5b4d15a7; /* Efecto hover en los enlaces del navbar */
 }
@@ -350,4 +350,3 @@ body {
     outline: none;
     box-shadow: 0 0 5px #28a745;
 }
-
